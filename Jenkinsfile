@@ -1,5 +1,6 @@
 pipeline {
     agent any
+    
 	tools{
       maven 'localMaven'
     }
@@ -13,6 +14,11 @@ pipeline {
         			echo 'Now Archiving...'
         			archiveArtifacts artifacts: '**/target/*.war'
         		}
+        	}
+        }
+        stage ('Deploy to tomcat') {
+        	steps {
+        		build job: 'maven-project-tomcat-deploy'
         	}
         }
     }

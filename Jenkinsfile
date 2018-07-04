@@ -16,5 +16,10 @@ pipeline {
         		}
         	}
         }
+        stage ('Deploy to tomcat') {
+        	steps {
+        		build job: 'maven-project-tomcat-deploy'
+        	}
+        }
     }
 }

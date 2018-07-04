@@ -29,7 +29,7 @@ pipeline {
                     input message:'Approve PRODUCTION Deployment?'
                 }
 
-                build job: 'maven-project-tomcat-production-deploy''
+                build job: 'maven-project-tomcat-production-deploy'
             }
             post {
                 success {
